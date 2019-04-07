@@ -1,23 +1,13 @@
-#!/usr/bin/env/ python3
-import tensorflow as tf
+import librosa
+
+import os
 import pandas as pd
-import numpy as np
-import pickle
+import glob 
+import IPython.display as ipd
+import matplotlib.pyplot as plt
+C = 'data/notes/C.wav'
+ipd.Audio(C)
 
-dataset = 'notes/'
-
-
-def preprocess():
-    pass
-
-
-def create_model():
-    pass
-    
-
-if __name__ == "__main__":
-    pass
-
-
-
-
+data, sampling_rate = librosa.load(C)
+plt.figure(figsize=(12, 4))
+librosa.display.waveplot(data, sr=sampling_rate)
